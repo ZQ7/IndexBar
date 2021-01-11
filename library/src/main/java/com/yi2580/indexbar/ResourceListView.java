@@ -73,12 +73,16 @@ public class ResourceListView extends FrameLayout {
         });
     }
 
+    public RecyclerView getRecyclerView() {
+        return mRv;
+    }
+
     public void setAdapter(RecyclerView.Adapter adapter) {
         setAdapter(adapter, new LinearLayoutManager(getContext()));
     }
 
     public void setAdapter(RecyclerView.Adapter adapter, LinearLayoutManager manager) {
-        mManager = mManager;
+        mManager = manager;
         mRv.setLayoutManager(mManager);
         mAdapter = adapter;
         mRv.setAdapter(mAdapter);
@@ -90,7 +94,6 @@ public class ResourceListView extends FrameLayout {
 
     /**
      * 设置Headerview的Count
-     *
      */
     public void setHeaderViewCount(int headerViewCount) {
         mHeaderViewCount = headerViewCount;
